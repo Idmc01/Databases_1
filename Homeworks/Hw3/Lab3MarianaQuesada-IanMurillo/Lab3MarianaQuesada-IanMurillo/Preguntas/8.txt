@@ -1,0 +1,4 @@
+/*8. Consulte la cantidad total de clientes que tienen compras. 5 pts.
+*/
+
+select count(distinct idclient) from purchase;

@@ -1,0 +1,2 @@
+/*2. Haga un sql para obtener todas las personas cuyo nombre empiece con la letra B. 4 pts.*/
+SELECT * FROM PERSON WHERE FIRSTNAME LIKE 'B%';

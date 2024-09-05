@@ -1,0 +1,227 @@
+--inserts
+
+/*1. Registre 20 personas con datos legibles y consistentes que incluyan el dato del salario, nombres 
+y apellidos, fecha de nacimiento, entre otros básicos. Asegúrese que hay 10 personas que tienen los 
+salarios más altos y que 5 de esos salarios se repiten. 20 pts.*/
+
+--Registro de 20 personas
+-- Inserción 1
+INSERT INTO Person (idPerson, firstName, secondName, firstSurname, secondSurname, birthDate)
+VALUES (person_seq.NEXTVAL, 'John', 'Doe', 'Smith', 'Johnson', TO_DATE('1985-06-12', 'YYYY-MM-DD'));
+INSERT INTO Employee (idPerson, salary)
+VALUES (person_seq.CURRVAL, 60000);
+
+-- Inserción 2
+INSERT INTO Person (idPerson, firstName, secondName, firstSurname, secondSurname, birthDate)
+VALUES (person_seq.NEXTVAL, 'Jane', 'Doe', 'Brown', 'Davis', TO_DATE('1978-03-24', 'YYYY-MM-DD'));
+INSERT INTO Employee (idPerson, salary)
+VALUES (person_seq.CURRVAL, 150000);
+
+-- Inserción 3
+INSERT INTO Person (idPerson, firstName, secondName, firstSurname, secondSurname, birthDate)
+VALUES (person_seq.NEXTVAL, 'Michael', 'James', 'Wilson', 'Anderson', TO_DATE('1990-09-05', 'YYYY-MM-DD'));
+INSERT INTO Employee (idPerson, salary)
+VALUES (person_seq.CURRVAL, 60000);
+
+-- Inserción 4
+INSERT INTO Person (idPerson, firstName, secondName, firstSurname, secondSurname, birthDate)
+VALUES (person_seq.NEXTVAL, 'Emily', 'Grace', 'Miller', 'Moore', TO_DATE('1996-12-18', 'YYYY-MM-DD'));
+INSERT INTO Employee (idPerson, salary)
+VALUES (person_seq.CURRVAL, 2900);
+
+--comentadas para las pruebas con clientes y sus compras
+/*-- Inserción 5
+INSERT INTO Person (idPerson, firstName, secondName, firstSurname, secondSurname, birthDate)
+VALUES (person_seq.NEXTVAL, 'David', 'Robert', 'Taylor', 'Clark', TO_DATE('1980-11-02', 'YYYY-MM-DD'));
+INSERT INTO Employee (idPerson, salary)
+VALUES (person_seq.CURRVAL, 150000);
+
+-- Inserción 6
+INSERT INTO Person (idPerson, firstName, secondName, firstSurname, secondSurname, birthDate)
+VALUES (person_seq.NEXTVAL, 'Sarah', 'Elizabeth', 'Harris', 'Young', TO_DATE('1979-07-15', 'YYYY-MM-DD'));
+INSERT INTO Employee (idPerson, salary)
+VALUES (person_seq.CURRVAL, 150000);
+
+-- Inserción 7
+INSERT INTO Person (idPerson, firstName, secondName, firstSurname, secondSurname, birthDate)
+VALUES (person_seq.NEXTVAL, 'Christopher', 'William', 'Martin', 'Hall', TO_DATE('1988-04-30', 'YYYY-MM-DD'));
+INSERT INTO Employee (idPerson, salary)
+VALUES (person_seq.CURRVAL, 53000);
+
+-- Inserción 8
+INSERT INTO Person (idPerson, firstName, secondName, firstSurname, secondSurname, birthDate)
+VALUES (person_seq.NEXTVAL, 'Britney', 'Nicole', 'Walker', 'Lewis', TO_DATE('1987-02-10', 'YYYY-MM-DD'));
+INSERT INTO Employee (idPerson, salary)
+VALUES (person_seq.CURRVAL, 1500);
+
+-- Inserción 9
+INSERT INTO Person (idPerson, firstName, secondName, firstSurname, secondSurname, birthDate)
+VALUES (person_seq.NEXTVAL, 'Andrew', 'Thomas', 'White', 'Lee', TO_DATE('1995-08-22', 'YYYY-MM-DD'));
+INSERT INTO Employee (idPerson, salary)
+VALUES (person_seq.CURRVAL, 54000);
+
+-- Inserción 10
+INSERT INTO Person (idPerson, firstName, secondName, firstSurname, secondSurname, birthDate)
+VALUES (person_seq.NEXTVAL, 'Olivia', 'Sophia', 'Jackson', 'Turner', TO_DATE('1982-01-07', 'YYYY-MM-DD'));
+INSERT INTO Employee (idPerson, salary)
+VALUES (person_seq.CURRVAL, 150000);
+
+-- Inserción 11
+INSERT INTO Person (idPerson, firstName, secondName, firstSurname, secondSurname, birthDate)
+VALUES (person_seq.NEXTVAL, 'Emma', 'Ava', 'Adams', 'Parker', TO_DATE('1989-06-19', 'YYYY-MM-DD'));
+INSERT INTO Employee (idPerson, salary)
+VALUES (person_seq.CURRVAL, 150000);
+
+-- Inserción 12
+INSERT INTO Person (idPerson, firstName, secondName, firstSurname, secondSurname, birthDate)
+VALUES (person_seq.NEXTVAL, 'John', 'Rodrick', 'Roberts', 'Bennett', TO_DATE('1993-10-14', 'YYYY-MM-DD'));
+INSERT INTO Employee (idPerson, salary)
+VALUES (person_seq.CURRVAL, 47000);
+
+-- Inserción 13
+INSERT INTO Person (idPerson, firstName, secondName, firstSurname, secondSurname, birthDate)
+VALUES (person_seq.NEXTVAL, 'Brian', 'Joseph', 'Wright', 'King', TO_DATE('1998-05-25', 'YYYY-MM-DD'));
+INSERT INTO Employee (idPerson, salary)
+VALUES (person_seq.CURRVAL, 2500);
+
+-- Inserción 14
+INSERT INTO Person (idPerson, firstName, secondName, firstSurname, secondSurname, birthDate)
+VALUES (person_seq.NEXTVAL, 'Ava', 'Chloe', 'Brown', 'Green', TO_DATE('1991-03-12', 'YYYY-MM-DD'));
+INSERT INTO Employee (idPerson, salary)
+VALUES (person_seq.CURRVAL, 57000);
+
+-- Inserción 15
+INSERT INTO Person (idPerson, firstName, secondName, firstSurname, secondSurname, birthDate)
+VALUES (person_seq.NEXTVAL, 'Ethan', 'Liam', 'Evans', 'Carter', TO_DATE('1997-09-08', 'YYYY-MM-DD'));
+INSERT INTO Employee (idPerson, salary)
+VALUES (person_seq.CURRVAL, 51000);
+
+-- Inserción 16
+INSERT INTO Person (idPerson, firstName, secondName, firstSurname, secondSurname, birthDate)
+VALUES (person_seq.NEXTVAL, 'Isabella', 'Olivia', 'Hall', 'Ward', TO_DATE('1994-02-03', 'YYYY-MM-DD'));
+INSERT INTO Employee (idPerson, salary)
+VALUES (person_seq.CURRVAL, 55000);
+
+-- Inserción 17
+INSERT INTO Person (idPerson, firstName, secondName, firstSurname, secondSurname, birthDate)
+VALUES (person_seq.NEXTVAL, 'James', 'Benjamin', 'Moore', 'Hayes', TO_DATE('1983-11-15', 'YYYY-MM-DD'));
+INSERT INTO Employee (idPerson, salary)
+VALUES (person_seq.CURRVAL, 60000);
+
+-- Inserción 18
+INSERT INTO Person (idPerson, firstName, secondName, firstSurname, secondSurname, birthDate)
+VALUES (person_seq.NEXTVAL, 'Sophia', 'Harper', 'Hernandez', 'Morris', TO_DATE('1992-07-24', 'YYYY-MM-DD'));
+INSERT INTO Employee (idPerson, salary)
+VALUES (person_seq.CURRVAL, 49000);
+
+-- Inserción 19
+INSERT INTO Person (idPerson, firstName, secondName, firstSurname, secondSurname, birthDate)
+VALUES (person_seq.NEXTVAL, 'bree', 'Lucas', 'Gonzalez', 'Perez', TO_DATE('1986-12-30', 'YYYY-MM-DD'));
+INSERT INTO Employee (idPerson, salary)
+VALUES (person_seq.CURRVAL, 58000);
+
+-- Inserción 20
+INSERT INTO Person (idPerson, firstName, secondName, firstSurname, secondSurname, birthDate)
+VALUES (person_seq.NEXTVAL, 'Ella', 'Rose', 'Rivera', 'Foster', TO_DATE('1999-05-07', 'YYYY-MM-DD'));
+INSERT INTO Employee (idPerson, salary)
+VALUES (person_seq.CURRVAL, 52000);
+*/
+
+SELECT * FROM Person; --Para ver los datos de personas
+SELECT * FROM Employee; --Para ver las personas que son empleados
+
+
+/*3. Registre 8 teléfonos con tipo de teléfono que incluya ‘Casa’, ‘Celular’, ‘Oficina’ y
+modele de forma que se puedan incluir más tipos de teléfono. 10 pts.*/
+
+INSERT INTO PhoneType (idPhoneType, phoneType) VALUES (phonetype_seq.NEXTVAL, 'Casa');--2
+INSERT INTO PhoneType (idPhoneType, phoneType) VALUES (phonetype_seq.NEXTVAL, 'Celular');--3
+INSERT INTO PhoneType (idPhoneType, phoneType) VALUES (phonetype_seq.NEXTVAL, 'Oficina');--4
+
+--Registro de 8 telefonos
+INSERT INTO Phone (idPhone,phoneNumber,idPhoneType,idPerson) VALUES (phone_seq.NEXTVAL, 88329482,3,6);
+INSERT INTO Phone (idPhone,phoneNumber,idPhoneType,idPerson) VALUES (phone_seq.NEXTVAL, 22334912,2,6);
+INSERT INTO Phone (idPhone,phoneNumber,idPhoneType,idPerson) VALUES (phone_seq.NEXTVAL, 89236654,3,17);
+INSERT INTO Phone (idPhone,phoneNumber,idPhoneType,idPerson) VALUES (phone_seq.NEXTVAL, 22438809,2,8);
+INSERT INTO Phone (idPhone,phoneNumber,idPhoneType,idPerson) VALUES (phone_seq.NEXTVAL, 88329482,3,7);
+INSERT INTO Phone (idPhone,phoneNumber,idPhoneType,idPerson) VALUES (phone_seq.NEXTVAL, 22800665,4,10);
+INSERT INTO Phone (idPhone,phoneNumber,idPhoneType,idPerson) VALUES (phone_seq.NEXTVAL, 88472312,3,10);
+INSERT INTO Phone (idPhone,phoneNumber,idPhoneType,idPerson) VALUES (phone_seq.NEXTVAL, 22329482,2,19);
+INSERT INTO Phone (idPhone,phoneNumber,idPhoneType,idPerson) VALUES (phone_seq.NEXTVAL, 22782932,4,12);
+INSERT INTO Phone (idPhone,phoneNumber,idPhoneType,idPerson) VALUES (phone_seq.NEXTVAL, 22129302,4,4);
+INSERT INTO Phone (idPhone,phoneNumber,idPhoneType,idPerson) VALUES (phone_seq.NEXTVAL, 88231239,3,4);
+
+SELECT * FROM PhoneType; --Para ver los teléfonos registraods
+SELECT * FROM Phone; --Para ver los teléfonos registrados
+
+--creacion de clientes
+INSERT INTO Client (idPerson)
+VALUES (client_seq.Nextval);
+INSERT INTO Client (idPerson)
+VALUES (client_seq.Nextval);
+INSERT INTO Client (idPerson)
+VALUES (client_seq.Nextval);
+
+SELECT * FROM client;
+
+/*10. Cree 15 productos. 10 pts.*/
+
+INSERT INTO Product (idProduct, productName, price) VALUES (product_seq.NEXTVAL, 'Tomate', 200);
+INSERT INTO Product (idProduct, productName, price) VALUES (product_seq.NEXTVAL, 'Naranja', 100);
+INSERT INTO Product (idProduct, productName, price) VALUES (product_seq.NEXTVAL, 'Fresa', 300);
+INSERT INTO Product (idProduct, productName, price) VALUES (product_seq.NEXTVAL, 'Uva', 200.80);
+INSERT INTO Product (idProduct, productName, price) VALUES (product_seq.NEXTVAL, 'Limon', 600);
+INSERT INTO Product (idProduct, productName, price) VALUES (product_seq.NEXTVAL, 'Mandarina', 400);
+INSERT INTO Product (idProduct, productName, price) VALUES (product_seq.NEXTVAL, 'Pera', 500.40);
+INSERT INTO Product (idProduct, productName, price) VALUES (product_seq.NEXTVAL, 'Manzana', 400.20);
+INSERT INTO Product (idProduct, productName, price) VALUES (product_seq.NEXTVAL, 'Papaya', 900);
+INSERT INTO Product (idProduct, productName, price) VALUES (product_seq.NEXTVAL, 'Aguacate', 900.90);
+INSERT INTO Product (idProduct, productName, price) VALUES (product_seq.NEXTVAL, 'Lima', 300);
+INSERT INTO Product (idProduct, productName, price) VALUES (product_seq.NEXTVAL, 'Kiwi', 200);
+INSERT INTO Product (idProduct, productName, price) VALUES (product_seq.NEXTVAL, 'Guanabana', 600.60);
+INSERT INTO Product (idProduct, productName, price) VALUES (product_seq.NEXTVAL, 'Banano', 500.30);
+INSERT INTO Product (idProduct, productName, price) VALUES (product_seq.NEXTVAL, 'Mora', 100);
+SELECT *FROM PRODUCT;
+
+select *from purchasexproduct;
+--compra 1
+INSERT INTO Purchase(idPurchase, idClient)
+VALUES (purchase_seq.Nextval, 2);
+
+INSERT INTO PurchaseXProduct(idPurchase, idProduct, quantity)
+VALUES (purchase_seq.currval, 1, 3);
+
+INSERT INTO PurchaseXProduct(idPurchase, idProduct, quantity)
+VALUES (purchase_seq.currval, 4, 5);
+
+--compra 1.1 (mismo cliente)
+INSERT INTO Purchase(idPurchase, idClient)
+VALUES (purchase_seq.Nextval, 2);
+
+INSERT INTO PurchaseXProduct(idPurchase, idProduct, quantity)
+VALUES (purchase_seq.currval, 3, 2);
+
+INSERT INTO PurchaseXProduct(idPurchase, idProduct, quantity)
+VALUES (purchase_seq.currval, 5, 8);
+
+--compra 2
+INSERT INTO Purchase(idPurchase, idClient)
+VALUES (purchase_seq.Nextval, 3);
+
+INSERT INTO PurchaseXProduct(idPurchase, idProduct, quantity)
+VALUES (purchase_seq.currval, 7, 2);
+
+INSERT INTO PurchaseXProduct(idPurchase, idProduct, quantity)
+VALUES (purchase_seq.currval, 1, 6);
+
+--compra 3
+INSERT INTO Purchase(idPurchase, idClient)
+VALUES (purchase_seq.Nextval, 4);
+
+INSERT INTO PurchaseXProduct(idPurchase, idProduct, quantity)
+VALUES (purchase_seq.currval, 4, 7);
+
+INSERT INTO PurchaseXProduct(idPurchase, idProduct, quantity)
+VALUES (purchase_seq.currval, 8, 2);
+
+select * from purchasexproduct;

@@ -1,0 +1,11 @@
+CREATE USER ad 
+    IDENTIFIED BY ad
+    DEFAULT tablespace ge_data 
+    QUOTA 10M on ge_data 
+    TEMPORARY TABLESPACE temp 
+    QUOTA 5M ON system;
+    
+GRANT CONNECT TO ad; 
+GRANT CREATE SESSION TO ad; 
+GRANT CREATE TABLE TO ad; 
+GRANT CREATE VIEW TO ad; 

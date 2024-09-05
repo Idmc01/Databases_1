@@ -1,0 +1,7 @@
+/*6. Cree una vista que contenga todas las personas que ganan menos de $3000. 10 pts.*/
+--CREATE VIEW employeeSalary AS
+SELECT *
+FROM employee
+WHERE salary < 3000;
+
+SELECT * FROM employeeSalary; --para mostrar la vista

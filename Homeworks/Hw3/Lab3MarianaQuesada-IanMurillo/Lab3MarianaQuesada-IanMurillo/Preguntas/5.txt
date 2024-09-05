@@ -1,0 +1,6 @@
+/*5. Haga un sql que retorne todas los personas que tengan teléfono tipo ‘Casa’. 10 pts.*/
+SELECT p.idPerson, p.firstName, pt.phoneType
+FROM person p
+INNER JOIN phone ph ON p.idPerson = ph.idPerson
+INNER JOIN phonetype pt ON ph.idPhoneType = pt.idPhoneType
+WHERE pt.phoneType = 'Casa';

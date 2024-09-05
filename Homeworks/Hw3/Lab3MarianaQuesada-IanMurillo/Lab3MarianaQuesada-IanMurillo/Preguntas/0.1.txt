@@ -1,0 +1,48 @@
+--Creacion del tablespace GE date e indices
+
+CREATE tablespace GE_data
+    DATAFILE 'C:\app\maria\oradata\prueba\ge_data'
+    SIZE 10M
+    REUSE
+    AUTOEXTEND ON
+    NEXT 512 
+    MAXSIZE 200M; 
+
+CREATE tablespace GE_ind
+    DATAFILE 'C:\app\maria\oradata\prueba\ge_ind'
+    SIZE 10M
+    REUSE
+    AUTOEXTEND ON
+    NEXT 512 
+    MAXSIZE 200M;
+    
+CREATE USER ge
+    IDENTIFIED BY ge
+    DEFAULT TABLESPACE ge_data 
+    QUOTA 10M ON ge_data
+    TEMPORARY TABLESPACE temp;
+
+GRANT connect TO ge;
+GRANT create session to ge;
+GRANT create table to ge;
+GRANT create view to ge;
+GRANT create sequence to ge;
+
+--Drops de tables y sequences
+DROP TABLE employee;
+DROP TABLE Phone;
+DROP TABLE PhoneType;
+DROP TABLE purchase;
+DROP TABLE purchasexproduct;
+DROP TABLE product;
+DROP TABLE client;
+DROP TABLE Person;
+
+
+DROP SEQUENCE person_seq;
+DROP SEQUENCE phone_seq;
+DROP SEQUENCE phonetype_seq;
+DROP SEQUENCE purchase_seq;
+DROP SEQUENCE product_seq;
+DROP SEQUENCE client_seq;
+DROP SEQUENCE purchasexproduct_seq;

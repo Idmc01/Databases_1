@@ -1,0 +1,7 @@
+CREATE TABLESPACE UN_Ind
+    DATAFILE 'C:\app\Ian\oradata\BD1\unind01.dbf'
+    SIZE 10M
+    REUSE
+    AUTOEXTEND ON
+    NEXT 512k
+    MAXSIZE 200M;

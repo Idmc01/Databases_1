@@ -1,0 +1,6 @@
+/*10. Liste los productos comprados por un cliente agrupado por cliente. 10 pts.*/
+
+select e.idclient, d.idproduct producto
+from purchase e
+right join purchasexproduct d
+on e.idpurchase=d.idpurchase

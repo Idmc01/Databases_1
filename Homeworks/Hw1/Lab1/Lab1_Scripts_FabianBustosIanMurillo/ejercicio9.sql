@@ -1,0 +1,2 @@
+ALTER TABLE people
+MODIFY first_name VARCHAR2(50)

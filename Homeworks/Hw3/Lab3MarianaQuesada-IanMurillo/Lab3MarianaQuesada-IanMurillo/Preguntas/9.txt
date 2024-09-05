@@ -1,0 +1,3 @@
+/*9. Consulte la cantidad total de clientes que existen. 5 pts.
+*/
+select count(idperson)from client;

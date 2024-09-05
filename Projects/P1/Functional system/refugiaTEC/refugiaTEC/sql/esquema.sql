@@ -1,0 +1,35 @@
+CREATE TABLESPACE UN_Data
+       DATAFILE 'C:\app\mauri\oradata\DBtec\undata01.dbf'
+       SIZE 10M
+       REUSE 
+       AUTOEXTEND ON
+       NEXT 512K
+       MAXSIZE 200M;
+ 
+CREATE TABLESPACE UN_Ind
+       DATAFILE 'C:\app\mauri\oradata\DBtec\unind01.dbf'
+       SIZE 10M
+       REUSE 
+       AUTOEXTEND ON
+       NEXT 512K
+       MAXSIZE 200M;
+
+CREATE USER UN
+       IDENTIFIED BY un
+       DEFAULT TABLESPACE un_data
+       QUOTA 10M ON un_data
+       TEMPORARY TABLESPACE temp
+       QUOTA 5M ON SYSTEM;
+       
+GRANT CONNECT TO un;
+
+GRANT CREATE SESSION TO UN;
+
+GRANT CREATE TABLE TO UN;
+
+GRANT CREATE VIEW TO UN;
+
+GRANT CREATE SEQUENCE TO UN;
+
+
+

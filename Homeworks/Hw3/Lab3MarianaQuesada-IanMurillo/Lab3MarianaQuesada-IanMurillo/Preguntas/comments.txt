@@ -1,0 +1,108 @@
+--Comments para cada tabla
+
+-- COMENTARIOS DE LA TABLA PERSON 
+COMMENT ON TABLE Person
+IS 'Tabla con la informacion basica de las personas registradas en la base de datos.';
+
+COMMENT ON COLUMN Person.idPerson
+IS 'Identificador unico generado por el sistema para distinguir todas las entradas de la tabla Person entre si.';
+
+COMMENT ON COLUMN Person.firstName
+IS 'Primer nombre de la persona registrada en la tabla.';
+
+COMMENT ON COLUMN Person.secondName
+IS 'Segundo nombre de la persona registrada en la tabla. Es opcional.';
+
+COMMENT ON COLUMN Person.firstSurname
+IS 'Primer apellido de la persona registrada en la tabla.';
+
+COMMENT ON COLUMN Person.secondSurname
+IS 'Segundo apellido de la persona registrada en la tabla. Es opcional';
+
+COMMENT ON COLUMN Person.birthdate
+IS 'Fecha de nacimiento de la persona registrada en la tabla. Usada para calcular su edad.';
+
+--COMMENT ON COLUMN Person.salary
+--IS 'Salario del empleado registrada en la tabla.';
+
+-- COMENTARIOS DE LA TABLA EMPLOYEE 
+COMMENT ON TABLE Employee
+IS 'Tabla con la informacion basica de los empleados registrados en la base de datos.';
+
+COMMENT ON COLUMN Employee.idPerson
+IS 'Identificador unico generado por el sistema para distinguir todas las entradas de la tabla Employee entre si.';
+
+COMMENT ON COLUMN Employee.salary
+IS 'Salario del empleado registrada en la tabla.';
+
+-- COMENTARIOS DE LA TABLA CLIENT 
+COMMENT ON TABLE Client
+IS 'Tabla con la informacion basica de los clientes registrados en la base de datos.';
+
+COMMENT ON COLUMN Client.idPerson
+IS 'Identificador unico generado por el sistema para distinguir todas las entradas de la tabla Client entre si.';
+
+--COMENTARIOS DE LA TABLA PHONE
+COMMENT ON TABLE Phone
+IS 'Tabla con la los numeros telefonicos registrados en la base de datos. Cada uno de estos asociado a un empleado registrado en la tabla Persona.';
+
+COMMENT ON COLUMN Phone.idPhone
+IS 'Identificador unico generado por el sistema para distinguir todas las entradas de la tabla Phone entre si.'; 
+
+COMMENT ON COLUMN Phone.phoneNumber
+IS 'Numero de telefono registrado en la tabla.';
+
+COMMENT ON COLUMN Phone.idPhoneType
+IS 'Tipo de numero de telefono del numero de telefono registrado. Es una referencia a idPhoneType de la tabla PhoneType.'; 
+
+COMMENT ON COLUMN Phone.idPerson
+IS 'Persona asociada al numero de telefono. Es una referencia idPerson de la tabla Person.'; 
+
+--COMENTARIOS DE LA TABLA PHONE TYPE
+COMMENT ON TABLE PhoneType
+IS 'Tabla con los tipos de numero de telefonos existentes.';
+
+COMMENT ON COLUMN PhoneType.idPhoneType
+IS 'Identificador unico generado por el sistema para distinguir todas las entradas de la tabla PhoneType entre si.';
+
+COMMENT ON COLUMN PhoneType.phoneType
+IS 'Nombre del tipo de telefono registrado en la tabla.';
+
+--COMENTARIOS DE LA TABLA PRODUCT
+COMMENT ON TABLE Product
+IS 'Tabla con los tipos de numero de telefonos existentes.';
+
+COMMENT ON COLUMN Product.idProduct
+IS 'Identificador unico generado por el sistema para distinguir todas las entradas de la tabla PhoneType entre si.';
+
+COMMENT ON COLUMN Product.productName
+IS 'Nombre del producto registrado en la tabla.';
+
+COMMENT ON COLUMN Product.price
+IS 'Precio del producto registrado en la tabla';
+
+--COMENTARIOS DE LA TABLA PURCHASE
+COMMENT ON TABLE Purchase
+IS 'Tabla con los tipos de numero de telefonos existentes.';
+
+COMMENT ON COLUMN Purchase.idPurchase
+IS 'Identificador unico generado por el sistema para distinguir todas las entradas de la tabla PhoneType entre si.';
+
+COMMENT ON COLUMN Purchase.idClient
+IS 'Cliente asociado al purchase. Es una referencia idClient de la tabla Client.'; 
+
+--COMENTARIOS DE LA TABLA PURCHASEXPRODUCT
+COMMENT ON TABLE PurchaseXProduct
+IS 'Tabla con los tipos de numero de telefonos existentes.';
+
+COMMENT ON COLUMN PurchaseXProduct.idPurchase
+IS 'Llave compuesta. Purchase asociado a purchaseXProducto. Es una referencia a idPurchase de la tabla Purchase.';
+
+COMMENT ON COLUMN PurchaseXProduct.idProduct
+IS 'Llave compuesta. Product asociado a purchaseXProducto. Es una referencia a idProduct de la tabla Product.';
+
+COMMENT ON COLUMN PurchaseXProduct.quantity
+IS 'cantidad de cada producto en la compra registrada en la tabla';
+
+COMMENT ON COLUMN PurchaseXProduct.totalCost
+IS 'Costo total de purchaseXProducto(compra) registrada en la tabla';

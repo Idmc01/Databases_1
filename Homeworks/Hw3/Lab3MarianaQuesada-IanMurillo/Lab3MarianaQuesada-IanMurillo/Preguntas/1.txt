@@ -1,0 +1,2 @@
+/*1. Consulte la cantidad total de personas que existen. 5 pts.*/
+SELECT COUNT(idPerson) FROM PERSON; --cuenta la cantidad total de personas

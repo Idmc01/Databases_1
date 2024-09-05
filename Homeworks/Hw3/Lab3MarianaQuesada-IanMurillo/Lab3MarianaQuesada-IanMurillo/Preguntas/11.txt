@@ -1,0 +1,8 @@
+/*11. Haga un sql de todos los clientes que tienen más de 2 compras. 20 pts.*/
+
+SELECT e.idPerson, COUNT(d.idPurchase) AS total
+FROM Client e
+RIGHT JOIN purchase d
+ON e.idPerson = d.idClient
+GROUP BY e.idPerson
+HAVING COUNT (d.idPurchase) > 2 ;

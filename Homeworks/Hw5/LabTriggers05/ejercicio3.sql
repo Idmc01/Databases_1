@@ -1,0 +1,9 @@
+--Ejercicio 3 - Lab 05 Triggers 
+CREATE USER adm
+    IDENTIFIED BY adm
+    DEFAULT TABLESPACE ge_data
+    QUOTA 10M ON ge_data
+    TEMPORARY TABLESPACE temp 
+    QUOTA 5M ON SYSTEM; 
+    
+GRANT ALL PRIVILEGES TO adm; 

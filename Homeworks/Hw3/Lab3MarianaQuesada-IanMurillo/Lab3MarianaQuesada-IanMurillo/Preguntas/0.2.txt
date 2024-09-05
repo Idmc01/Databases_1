@@ -1,0 +1,97 @@
+--Creacion de tablas requeridas con sus sequences
+
+CREATE TABLE Person (
+    idPerson NUMBER(6) CONSTRAINT pk_person PRIMARY KEY,
+    firstName VARCHAR(20) CONSTRAINT person_firstName_nn NOT NULL,
+    secondName VARCHAR(20),--opcional
+    firstSurname VARCHAR(25) CONSTRAINT person_firstSurname_nn NOT NULL,
+    secondSurname VARCHAR(25),--opcional
+    birthDate DATE CONSTRAINT person_birthDate_nn NOT NULL
+);
+
+SELECT * FROM PERSON;
+
+CREATE SEQUENCE person_seq
+    START WITH 1
+    INCREMENT BY 1
+    NOCACHE
+    NOCYCLE;
+
+CREATE TABLE PhoneType (
+    idPhoneType NUMBER(6) CONSTRAINT pk_phoneType PRIMARY KEY,
+    phoneType VARCHAR(20) CONSTRAINT phoneType_phoneType_nn NOT NULL
+);
+
+CREATE SEQUENCE phonetype_seq
+    START WITH 1
+    INCREMENT BY 1
+    NOCACHE
+    NOCYCLE;
+
+CREATE TABLE Phone (
+    idPhone NUMBER(6) CONSTRAINT pk_phone PRIMARY KEY,
+    idPhoneType NUMBER(6) CONSTRAINT fk_idPhoneType1 REFERENCES PhoneType(idPhoneType),
+    idPerson NUMBER (6) CONSTRAINT fk_idPerson1 REFERENCES Person(idPerson),
+    phoneNumber NUMBER(8) CONSTRAINT phone_phoneNumber_nn NOT NULL
+);
+
+CREATE SEQUENCE phone_seq
+    START WITH 1
+    INCREMENT BY 1
+    NOCACHE
+    NOCYCLE;
+
+CREATE TABLE Employee (
+    idPerson NUMBER (6) CONSTRAINT pk_employee PRIMARY KEY,
+    salary NUMBER(8,2) CONSTRAINT employee_salary_nn NOT NULL,
+    CONSTRAINT fk_idPerson_employee FOREIGN KEY(idPerson) REFERENCES Person(idPerson)
+);
+
+CREATE SEQUENCE employee_seq
+    START WITH 1
+    INCREMENT BY 1
+    NOCACHE
+    NOCYCLE;
+    
+CREATE TABLE Client (
+    idPerson NUMBER (6) CONSTRAINT pk_client PRIMARY KEY, 
+    CONSTRAINT fk_idPerson_client FOREIGN KEY(idPerson) REFERENCES Person(idPerson)
+);
+
+CREATE SEQUENCE client_seq
+    START WITH 1
+    INCREMENT BY 1
+    NOCACHE
+    NOCYCLE;
+
+
+CREATE TABLE Product ( 
+    idProduct NUMBER (6) CONSTRAINT pk_idProduct PRIMARY KEY,
+    productName VARCHAR2(25) CONSTRAINT product_productName_nn NOT NULL,
+    price NUMBER(8,2) CONSTRAINT product_price_nn NOT NULL
+);
+
+CREATE SEQUENCE product_seq
+    START WITH 1
+    INCREMENT BY 1
+    NOCACHE
+    NOCYCLE; 
+    
+CREATE TABLE Purchase (
+    idPurchase NUMBER (6) CONSTRAINT pk_purchase PRIMARY KEY,
+    idClient CONSTRAINT fk_idClient REFERENCES Client(idPerson)
+);
+
+CREATE SEQUENCE purchase_seq
+    START WITH 1
+    INCREMENT BY 1
+    NOCACHE
+    NOCYCLE;
+    
+CREATE TABLE PurchaseXProduct (
+    idPurchase CONSTRAINT fk_idPurchase REFERENCES Purchase(idPurchase),
+    idProduct CONSTRAINT fk_idProduct REFERENCES Product(idProduct),
+    quantity NUMBER (6) CONSTRAINT purchasexproduct_quantity_nn NOT NULL,
+    PRIMARY KEY (idPurchase, idProduct)
+);   
+    

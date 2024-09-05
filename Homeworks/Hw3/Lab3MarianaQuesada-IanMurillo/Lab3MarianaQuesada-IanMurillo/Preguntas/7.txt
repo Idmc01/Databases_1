@@ -1,0 +1,28 @@
+/*7. Cree dos vistas con el top 3 de personas con más salario con base en los 2 siguientes queries. 
+¿Cuál es la diferencia entre cada uno? ver enunciado 20 pts.
+Hay que hacer un join entre la tabla persona y la tabla empleado para que funcione correctamente
+el codigo dado, como existe una relacion de herencia entre persona y empleado y no todo esta en
+una sola tabla.
+*/
+
+--este select muestra una tabla con el primer ap y segundo ap de la persona con su salario correspondiente.
+select * from (SELECT p.firstName, p.firstSurname, px.Salary
+FROM Person p
+JOIN employee px on p.idPerson = px.idPerson order by salary desc) 
+
+--este caso retorna la persona con mayor salario.
+select rownum id,firstName||' '||firstSurname nombre ,salary 
+from (
+select * from (SELECT p.firstName, p.firstSurname, px.Salary
+FROM Person p
+JOIN employee px on p.idPerson = px.idPerson order by salary desc))
+where rownum <=1;
+
+--este caso retorna la persona con mayor salario pero si existen mas personas con salarios repetidos las incluye en la lista.
+SELECT firstName||' '||firstSurname nombre, salary
+FROM (
+select * from (SELECT p.firstName, p.firstSurname, e.salary, rank() over (order by e.salary desc) salary_rank
+FROM Person p
+JOIN employee e on p.idPerson = e.idPerson order by salary desc)
+)
+WHERE salary_rank <= 1;

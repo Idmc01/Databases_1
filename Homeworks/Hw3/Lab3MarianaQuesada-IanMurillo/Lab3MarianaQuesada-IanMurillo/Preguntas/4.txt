@@ -1,0 +1,5 @@
+/*4. Indique la cantidad total de números de télefono por persona. 10 pts.*/
+SELECT p.idPerson, COUNT(px.idPhone) AS totalPhoneNumbers
+FROM Person p
+LEFT JOIN Phone px ON p.idPerson = px.idPerson
+GROUP BY p.idPerson
